@@ -1,3 +1,7 @@
+# biodivMapR2 v2.5.2
+## fix
+- fixed computation of functional diversity metrics when nbCPU = 1
+
 # biodivMapR2 v2.5.1
 ## fix
 - fixed biodivMapR_opt_clusters bypassing parallel computing

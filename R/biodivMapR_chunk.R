@@ -112,6 +112,11 @@ biodivMapR_chunk <- function(blk, r_in, window_size, Kmeans_info,
                                    Hill_order = Hill_order,
                                    pcelim = pcelim)
         if (!is.null(fd_metrics)){
+          inputdata <- cbind(center_reduce(x = inputdata[selected_bands],
+                                           m = Kmeans_info$MinVal,
+                                           sig = Kmeans_info$Range),
+                             'win_ID' = inputdata$win_ID)
+          windows_per_CPU <- split_chunk(inputdata, nbCPU)
           funct_idx_cpu <- lapply(X = windows_per_CPU$SSwindow_perCPU,
                                   FUN = functional_window_list,
                                   fd_metrics = fd_metrics)

@@ -100,7 +100,7 @@ biodivMapR_full <- function(input_raster_path, input_mask_path = NULL,
   options(fundiversity.memoise = FALSE)
 
   if (!moving_window){
-    message('compute raster diversity using moving window')
+    message('compute raster diversity')
     ab_div_metrics <- get_raster_diversity(input_raster_path = input_raster_path,
                                            input_mask_path = input_mask_path,
                                            Kmeans_info = Kmeans_info,
